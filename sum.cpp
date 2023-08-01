@@ -1,10 +1,9 @@
 #include <iostream>
 int main()
 {
-    int num = 10;
-    while (num >= 1) {
-        std::cout << num << std::endl;
-        --num;
-    }
+    int sum, i;
+    for (int i = 0; i != 10; ++i)
+        sum += i;
+    std::cout << i << " " << sum << std::endl;
     return 0;
 }
