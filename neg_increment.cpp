@@ -1,6 +1,6 @@
 #include <iostream>
 int main() {
-    // test
+    // test2
     int rows;
 
     std::cout << "Enter number of rows: ";
