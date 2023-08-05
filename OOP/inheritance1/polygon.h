@@ -1,4 +1,7 @@
 // Header file or class declaration
+#ifndef POLYGON_H
+#define POLYGON_H
+
 #include <string>
 
 class Polygon {
@@ -22,3 +25,5 @@ class Polygon {
         std::string GetName(void) const;
         void SetName(const std::string & name);
 };
+
+#endif

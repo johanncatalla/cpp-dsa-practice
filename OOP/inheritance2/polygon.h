@@ -1,5 +1,6 @@
 // Header file or class declaration
 #include <string>
+#pragma once
 
 class Polygon {
 // Private members and methods are only accessible via methods in the class definition
