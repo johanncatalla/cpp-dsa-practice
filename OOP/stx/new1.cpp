@@ -10,7 +10,7 @@ int main(int argc, char * argv[]) {
     Polygon polygon = Polygon(4, "Rectangle");
 
     // Check number of sides -- Prints "Rectangle has 4 sides"
-    std::cout << " has " << polygon.GetNumSides() << " sides"<< std::endl;
+    std::cout << polygon.GetName() << " has " << polygon.GetNumSides() << " sides"<< std::endl;
 
     // Change number of sides to 3 and rename to "Triangle"
     polygon.SetNumSides(3);
