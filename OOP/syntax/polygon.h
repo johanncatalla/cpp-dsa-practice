@@ -1,5 +1,4 @@
 // Header file or class declaration
-
 #include <string>
 
 class Polygon {
@@ -13,13 +12,12 @@ class Polygon {
 
     // Public members and methods are accessible to anuone who creates an instance of the class
     public:
-        Polygon(const int num_sides, const std::string & name); // Constructor or order of parameters
+        Polygon(const int num_sides, const std::string name); // Constructor or order of parameters
 
         // Getters and setters
         int GetNumSides(void) const;
         void SetNumSides(const int num_sides);
         
-        std::string & GetName(void) const;
+        std::string GetName(void) const;
         void SetName(const std::string & name);
 };
-

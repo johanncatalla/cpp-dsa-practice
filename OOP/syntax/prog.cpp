@@ -1,9 +1,8 @@
 // File: main.cpp
-
 #include <string>
 #include <iostream>
 
-#include "polygon.hpp"    // <--- Obtains the class declaration
+#include "polygon.cpp"    // <--- Obtains the class declaration
 
 int main(int argc, char * argv[]) {
     // Create a polygon with 4 sides and the name "Rectangle"
@@ -15,5 +14,4 @@ int main(int argc, char * argv[]) {
     // Change number of sides to 3 and rename to "Triangle"
     polygon.SetNumSides(3);
     polygon.SetName("Triangle");
-    return 0;
 }
