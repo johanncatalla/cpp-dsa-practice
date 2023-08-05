@@ -2,24 +2,24 @@
 
 // Parent Class
 class Shape {
-    public:
-        void setWidth(int w) {
-            width = w;
-        }
-        void setheight(int h) {
-            height = h;
-        }
-    protected:
-        int width;
-        int height;
+public:
+    void setWidth(int w) {
+        width = w;
+    }
+    void setheight(int h) {
+        height = h;
+    }
+protected:
+    int width;
+    int height;
 };
 
 // Child Class
 class Rectangle: public Shape {
-    public:
-        int getArea() {
-            return (width * height);
-        }
+public:
+    int getArea() {
+        return (width * height);
+    }
 };
 
 int main(void) {
