@@ -1,7 +1,7 @@
 // Class definition
 // Extends the declaration by providing actual implementation
 #include <string>
-#include "polygon.h"
+
 
 // Constructor 
 // Must scope the method definitions with the class name (Polygon:)
