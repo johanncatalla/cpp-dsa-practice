@@ -19,6 +19,7 @@ class Polygon {
         Polygon(const int num_sides, const std::string name); // Constructor or order of parameters
 
         // Getters and setters
+        // Constant functions will not modify members (ideal for getters)
         int GetNumSides(void) const;
         void SetNumSides(const int num_sides);
         

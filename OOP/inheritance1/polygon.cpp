@@ -17,6 +17,7 @@ Polygon::Polygon(const int num_sides, const std::string name) {
 */
 
 // Get the number of sides
+
 int Polygon::GetNumSides(void) const {
     return this->num_sides;
 } 
