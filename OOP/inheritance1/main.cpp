@@ -14,4 +14,4 @@ int main(int argc, char * argv[]) {
     // Change number of sides to 3 and rename to "Triangle"
     polygon.SetNumSides(3);
     polygon.SetName("Triangle");
-}
+}   

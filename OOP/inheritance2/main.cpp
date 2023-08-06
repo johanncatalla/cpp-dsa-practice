@@ -1,7 +1,6 @@
 #include <iostream>
 
-#include "rectangle.cpp"
-#include "polygon.cpp"
+#include "Rectangle.h"
 
 int main(int argc, char *argv[]) {
     Rectangle rectangle("Square", 7, 6);
