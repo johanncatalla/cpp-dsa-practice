@@ -5,10 +5,16 @@
 
 // Constructor 
 // Must scope the method definitions with the class name (Polygon:)
+// Memeber initializer list
+Polygon::Polygon(const int num_sides, const std::string name) : num_sides(num_sides), name(name) {}
+
+// long method
+/*
 Polygon::Polygon(const int num_sides, const std::string name) {
-    this->num_sides = num_sides; // 'this is a pointer to the instance of the class. Members are accessed via the -> operator
-    this->name = name; // In this case we need to use 'this->' ti avoid shadowing the member variable since the argument shares the same name
+    this->num_sides = num_sides;
+    this->name = name;
 }
+*/
 
 // Get the number of sides
 int Polygon::GetNumSides(void) const {
