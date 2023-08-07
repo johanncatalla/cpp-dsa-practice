@@ -17,7 +17,13 @@ int main()
     
     bool result = compareIsbn(item1, item2);
 
-    std::cout << result << std::endl;
+    bool result2 = item1 != item2;
+
+    std::cout << result << "\n" << result2 << std::endl;
+    
+    Sales_item item3(std::cin);
+
+    std::cout << "Item 3: " << item3 << std::endl;
 
     return 0;
 
