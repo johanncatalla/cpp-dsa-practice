@@ -95,10 +95,11 @@ operator!=(const Sales_item &lhs, const Sales_item &rhs)
 }
 
 // assumes that both objects refer to the same ISBN
-Sales_item& Sales_item::operator+=(const Sales_item& rhs) 
+
+Sales_item &Sales_item::operator+=(const Sales_item& item2) 
 {
-    units_sold += rhs.units_sold; 
-    revenue += rhs.revenue; 
+    units_sold += item2.units_sold; 
+    revenue += item2.revenue; 
     return *this;
 }
 
