@@ -10,10 +10,10 @@ int main()
     // size
     unsigned int size = l.size();
 
-    for(std::list<int>::iterator it = l.begin(); it !=l.end(); it++) {
+    for(std::list<int>::iterator it = l.begin(); it !=l.end(); ++it) {
         std::cout << *it << std::endl;
     }
-    for (auto v : l)
+    for (auto const &v : l)
         std::cout << v;
     
     return 0;
