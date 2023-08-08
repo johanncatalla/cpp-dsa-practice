@@ -16,5 +16,13 @@ int main()
     cust *var1 = new cust(66);
     cust *vart = new cust(25);
     
+    std::cout << var1->p << std::endl;
+    std::cout << vart->p << std::endl;
+
+    delete var1, delete vart;
+
+    // deleted
+    std::cout << vart->p;
+
     return 0;
 }
