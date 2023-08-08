@@ -69,6 +69,7 @@ int main()
 {
     Movable a(Bar());
     Movable b = Bar();
-    auto x =  a.getPtr();
+    
+    std::cout << a.getPtr().getData();
     return 0;
 }
