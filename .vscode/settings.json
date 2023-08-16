@@ -48,6 +48,8 @@
         "complex": "cpp",
         "cstdarg": "cpp",
         "list": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "map": "cpp",
+        "set": "cpp"
     }
 }
