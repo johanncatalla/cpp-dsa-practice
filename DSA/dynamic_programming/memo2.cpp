@@ -1,7 +1,7 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 
-std::map<short, long long> memo;
+std::unordered_map<short, long long> memo;
 const long long fib(int n) {
     
     if (memo.find(n) != memo.end()) { return memo[n]; } 
