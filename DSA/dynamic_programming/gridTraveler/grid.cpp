@@ -12,12 +12,15 @@ Write a function gridTraveler(m, n) that calculates this.
 std::unordered_map<std::string, long long> memo;
 
 const long long gridTraveler(int m, int n) {
+    // concatenate m and n to string key
     const std::string key = std::to_string(m) + ',' + std::to_string(n);
 
-    if (memo.find(key) != memo.end()) return memo[key];
-    if (m == 1 && n == 1) return 1;
-    if (m == 0 || n == 0) return 0;
+    // check if key exists
+    if (memo.find(key) != memo.end()) { return memo[key]; }
+    if (m == 1 && n == 1) { return 1; }
+    if (m == 0 || n == 0) { return 0; }
 
+    // recurse to memo
     memo[key] = gridTraveler(m - 1, n) + gridTraveler(m, n - 1);
     return memo[key];
 }
@@ -26,6 +29,6 @@ int main() {
     std::cout << gridTraveler(2, 3) << std::endl;
     std::cout << gridTraveler(3, 3) << std::endl;
     std::cout << gridTraveler(3, 2) << std::endl;
-    std::cout << gridTraveler(18, 18) << std::endl;
+    std::cout << gridTraveler(20, 20) << std::endl;
     return 0;
 } 
