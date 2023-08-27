@@ -13,7 +13,6 @@ Write a function gridTraveler(m, n) that calculates this.
 class Solution {
 private:
     std::unordered_map<std::string, long long> memo;
-
 public:
     const long long gridTraveller(short m, short n) {
         const std::string key = std::to_string(m) + ',' + std::to_string(n);
@@ -29,6 +28,19 @@ public:
 
 int main() {
     Solution grid;
-    long long res = grid.gridTraveller(18, 18);
+    long long res = grid.gridTraveller(40, 40);
     std::cout << res;
 }
+
+/*
+Memoization:
+1. Make it work (brute force)
+    - Visualize the problem as a tree
+    - implement the tree using recursion
+    - test (may be slow)
+2. Make it efficient
+    - add memo object (map, vector etc.)
+    - add base case to return memo values (find if key exists)
+    - store memo values into the memo
+*/
+
