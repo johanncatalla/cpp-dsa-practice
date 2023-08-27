@@ -33,46 +33,47 @@ int main() {
     getline(cin, msg);
     width = msg.length() + 4;
     centerpos = getcenterpos(width);
-    
+    short Ypos = ((28 - height)/2);
+    system("cls");
    
     for(int a =  0; a <= height+1; a++) {
         // top
         if (a==0) {
-        	gotoxy(centerpos, 0);
+        	gotoxy(centerpos, Ypos);
             cout << char(201);
             for (int j=1; j<=width; j++) {
                 cout << char(205);
             }
             cout << char(187);
         } else if (a == height+1) {
-            gotoxy(centerpos,a);
+            gotoxy(centerpos, Ypos+a);
             cout << char(200);
             for (int k = 1; k <= width; k++) {
                 cout << char(205);
             }
             cout << char(188);
         } else if(a==height/2) {
-            if ((a+1)%2==0) {
-                gotoxy(centerpos,a);
+            if ((height)%2==0) {
+                gotoxy(centerpos, Ypos+a);
                 cout << char(186);
-                gotoxy(centerpos+3,a);
+                gotoxy(centerpos+3, Ypos+a);
                 cout << msg << endl;
-                gotoxy(centerpos+3, a+1);
+                gotoxy(centerpos+3, Ypos+a+1);
                 cout << msg << endl;
-                gotoxy(centerpos+width+1, a);
+                gotoxy(centerpos+width+1, Ypos+a);
                 cout << char(186);
             } else {
-            gotoxy(centerpos,a);
+            gotoxy(centerpos, Ypos+a);
             cout << char(186);
-            gotoxy(centerpos+3,a);
+            gotoxy(centerpos+3,Ypos+a+1);
             cout << msg << endl;
-            gotoxy(centerpos+width+1,a);
+            gotoxy(centerpos+width+1, Ypos+a);
             cout << char(186);
             }
         } else {
-        gotoxy(centerpos, a);
+        gotoxy(centerpos, Ypos+a);
         cout << char (186);
-        gotoxy(centerpos+width+1, a);
+        gotoxy(centerpos+width+1, Ypos+a);
         cout << char(186);
     } 
     }
