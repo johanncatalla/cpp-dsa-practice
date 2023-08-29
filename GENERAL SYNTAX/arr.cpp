@@ -53,14 +53,6 @@ int main() {
 	
 	std::cout  << "\nSum: " << sum << "\n";
 	printf("Avg: %.2f\n", avg);
-	
-	for (short i = 0; i < oddcnt; i++) {
-		if (odd[i+1] > odd[i]) {
-			oddH = odd[i+1];
-		} else {
-			oddH = odd[i];
-		}
-	}
 
         // get highest odd
 	oddH = odd[0];
