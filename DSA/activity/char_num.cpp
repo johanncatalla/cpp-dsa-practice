@@ -11,12 +11,12 @@ private:
 public:
     void checkOddEven(std::string txt) {
         for (short i = 0; i < txt.size(); i++) {
-        if (memo.find(txt[i]) == memo.end()) {
-            memo[txt[i]] = 1; 
-        } else {
-            memo[txt[i]] += 1;
+            if (memo.find(txt[i]) == memo.end()) {
+                memo[txt[i]] = 1; 
+            } else {
+                memo[txt[i]] += 1;
+            }
         }
-    }
         for (const auto &pair : memo) {
             if (pair.second % 2 == 0) {
                 allOdd = false;
@@ -33,7 +33,6 @@ public:
         }
     }
 };
-
 
 int main() {
     std::string txt;
