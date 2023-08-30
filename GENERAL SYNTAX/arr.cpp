@@ -64,7 +64,7 @@ int main() {
 
         // lowest even
 	evenL = even[0];
-	for (int i = 1; i < evencnt: i++) {
+	for (int i = 1; i < evencnt; i++) {
 		if (even[i] < evenL) {
 			evenL = even[i];
 		}
