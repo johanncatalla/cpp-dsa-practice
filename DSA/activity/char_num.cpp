@@ -10,6 +10,7 @@ private:
     bool allEven = true;
 public:
     void checkOddEven(std::string txt) {
+        // Store in map
         for (short i = 0; i < txt.size(); i++) {
             if (memo.find(txt[i]) == memo.end()) {
                 memo[txt[i]] = 1; 
@@ -17,6 +18,7 @@ public:
                 memo[txt[i]] += 1;
             }
         }
+        // Check cases
         for (const auto &pair : memo) {
             if (pair.second % 2 == 0) {
                 allOdd = false;
