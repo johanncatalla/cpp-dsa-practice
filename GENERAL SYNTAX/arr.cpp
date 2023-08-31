@@ -2,7 +2,7 @@
 #define N 10
 
 int main() {
-	int arr[N], odd[10], even[10], sum, evenL, oddH, evencnt = 0, oddcnt = 0;
+	int arr[N], odd[N], even[N], sum, evenL, oddH, evencnt = 0, oddcnt = 0;
 	float  avg;
 	// Definition
 	for (short i = 0; i < N; i++) {
@@ -23,10 +23,9 @@ int main() {
 		} else {
 			even[evencnt++] = arr[i];
 		}
-		
 	} 
 	// Print array
-	std::cout << "Array: ";
+	std::cout << "\nArray: ";
 	for (short  i = 0; i < N; i++) {
 		std::cout << arr[i] << " ";
 	}
@@ -56,19 +55,25 @@ int main() {
 
         // get highest odd
 	oddH = odd[0];
-	for (int i = 1; i < oddcnt; i++) {
+	if (oddcnt > 0) {
+		for (int i = 1; i < oddcnt; i++) {
 		if (odd[i] > oddH) {
 			oddH = odd[i];
-		}
+		} 
 	}
-
+	}
         // lowest even
 	evenL = even[0];
-	for (int i = 1; i < evencnt; i++) {
+	if (evencnt == 0) {
+		evenL = 0;
+	} else {
+		for (int i = 1; i < evencnt; i++) {
 		if (even[i] < evenL) {
 			evenL = even[i];
 		}
 	}
+	}
+	
 	
 	std::cout << "Highest odd: " << oddH << "\nLowest Even: " << evenL;
 	
