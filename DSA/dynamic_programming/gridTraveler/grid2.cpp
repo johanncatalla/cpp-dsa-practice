@@ -28,7 +28,7 @@ public:
 
 int main() {
     Solution grid;
-    long long res = grid.gridTraveller(40, 40);
+    long long res = grid.gridTraveller(30, 30);
     std::cout << res;
 }
 
