@@ -6,8 +6,8 @@ int main() {
     cout << "Enter array size: ";
     cin >> size;
     cout << "Enter xy: ";
-    cin >> x;
-    cin >> y;
+    cin >> x >> y;
+    
     int arr[size] = {};
 
     for (int i = 0; i < size; i++) {
