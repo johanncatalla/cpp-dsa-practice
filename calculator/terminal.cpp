@@ -19,7 +19,7 @@ public:
 
 bool Stack::push(string val) {
     if (top >= 99) {
-        cout << "Stack is full";
+        cout << "Failed to push. Stack is full.";
         return false;
     } else {
         arr[++top] = val;
@@ -29,7 +29,7 @@ bool Stack::push(string val) {
 
 string Stack::pop() {
     if (top < 0) {
-        cout << "Invalid expression";
+        cout << "Invalid expression/Stack is empty";
         return 0;
     } else {
         string x = arr[top--];
@@ -59,48 +59,47 @@ bool isOperator(string val) {
 }
 
 vector<string> infixToPostfix (vector<string> infix) {
-    Stack st;
+    Stack stack;
     vector<string> postfix;
 
     for(auto &i : infix) {
-
         if (!isOperator(i)) {
             postfix.push_back(i);
         } else if (i == "(") {
-            st.push("(");
+            stack.push("(");
         } else if (i == ")") {
-            while(st.get_top() != "(") {
-                postfix.push_back(st.get_top());
-                st.pop();
+            while(stack.get_top() != "(") {
+                postfix.push_back(stack.get_top());
+                stack.pop();
             }
-            st.pop();
+            stack.pop();
         } else {
-            while (!st.isEmpty() && precedence(i) <= precedence(st.get_top())) {
-                postfix.push_back(st.get_top());
-                st.pop();
+            while (!stack.isEmpty() && precedence(i) <= precedence(stack.get_top())) {
+                postfix.push_back(stack.get_top());
+                stack.pop();
             }
-            st.push(i);
+            stack.push(i);
         }
     }
 
-    while (!st.isEmpty()) {
-        postfix.push_back(st.get_top());
-        st.pop();
+    while (!stack.isEmpty()) {
+        postfix.push_back(stack.get_top());
+        stack.pop();
     }
 
     return postfix;
 }
 
-double evaluatePostfix(const vector<string>& postfix) {
-    Stack st;
+double calculatePostfix(const vector<string>& postfix) {
+    Stack stack;
 
     for(auto& i : postfix) {
 
         if(!isOperator(i)) {
-            st.push(i);
+            stack.push(i);
         } else {
-            double operand2 = stod(st.pop());
-            double operand1 = stod(st.pop());
+            double operand2 = stod(stack.pop());
+            double operand1 = stod(stack.pop());
             double result;
 
             if(i == "+") result = operand1 + operand2;
@@ -108,10 +107,10 @@ double evaluatePostfix(const vector<string>& postfix) {
             else if(i == "*") result = operand1 * operand2;
             else if(i == "/") result = operand1 / operand2;
 
-            st.push(to_string(result));
+            stack.push(to_string(result));
         }
     }
-    return stod(st.pop());
+    return stod(stack.pop());
 }
 
 // MENU
@@ -226,15 +225,12 @@ int main() {
 
                 if (!isOperator(s.substr(i,1)) && s[i] != '(' && s[i] != ')')
                     temp += s[i];
-
                 else {
                     if (temp.length() > 0) {
                         input.push_back(temp);
                         temp = "";
                     }
-
                     input.push_back(s.substr(i,1));
-
                 }
 
                 if (i == s.length()-1 && !temp.empty())
@@ -250,25 +246,25 @@ int main() {
 
             cout << endl;
 
-            double res = evaluatePostfix(postfix);
+            double res = calculatePostfix(postfix);
 
             std::cout << "RESULT: " << res << endl;
         } else if (choice == 2) {
             system("cls");
             cout << "INFIX: ";
 
-            string s;
+            string infix;
 
-            cin >> s;
+            cin >> infix;
 
             vector<string> input;
 
             string temp = "";
 
-            for (int i = 0; i < s.length(); i++) {
+            for (int i = 0; i < infix.length(); i++) {
 
-                if (!isOperator(s.substr(i,1)) && s[i] != '(' && s[i] != ')')
-                    temp += s[i];
+                if (!isOperator(infix.substr(i,1)) && infix[i] != '(' && infix[i] != ')')
+                    temp += infix[i];
 
                 else {
                     if (temp.length() > 0) {
@@ -276,11 +272,11 @@ int main() {
                         temp = "";
                     }
 
-                    input.push_back(s.substr(i,1));
+                    input.push_back(infix.substr(i,1));
 
                 }
 
-                if (i == s.length()-1 && !temp.empty())
+                if (i == infix.length()-1 && !temp.empty())
                     input.push_back(temp);
 
             }
