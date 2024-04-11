@@ -27,8 +27,8 @@ int main() {
 
     std::vector<int> res = sol.twoSum(v, target);
 
-    for (auto iter = res.begin(); iter != res.end(); iter++) {
-        std::cout << *iter << " ";
+    for (int num : res) {
+        std::cout << num << " ";
     }
 
     return 0;

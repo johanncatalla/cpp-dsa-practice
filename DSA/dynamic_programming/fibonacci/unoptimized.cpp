@@ -6,7 +6,7 @@ const int fib(int n) {
 }
 
 int main() {
-    int res = fib(5);
+    int res = fib(500);
     std::cout << res;
     return 0;
 }

@@ -9,9 +9,9 @@ const long long fib(int n) {
     memo[n] = fib(n - 1) + fib(n - 2);
 
     // print
-    for (auto iter = memo.begin(); iter != memo.end(); iter++) {
-        std::cout << iter->first << ": " << iter->second << "\n";
-    }
+    //for (auto iter = memo.begin(); iter != memo.end(); iter++) {
+      //  std::cout << iter->first << ": " << iter->second << "\n";
+    //}
 
     return memo[n];
 } 
@@ -22,7 +22,7 @@ const long long calculate(int n) {
 }
 */
 int main() {
-    long long res = fib(6);
+    long long res = fib(600);
     std::cout << res;
 
     return 0;
